@@ -1,0 +1,24 @@
+﻿// --- 初期設定・ステータス ---
+int playerHp = 10;
+int enemyHp = 5;
+int playerPower = 5;
+
+// --- バトル開始の演出 ---
+Console.WriteLine("Game Start");
+Console.WriteLine($"敵が現れた！（敵HP：{enemyHp}）");
+Console.WriteLine("----------------------------");
+
+// --- 攻撃処理 ---
+enemyHp -= playerPower;
+
+Console.WriteLine("プレイヤーの攻撃");
+Console.WriteLine($"敵に{playerPower}のダメージを与えた!");
+Console.WriteLine($"敵の残りHP：{enemyHp}");
+
+// --- 勝敗判定 ---
+if(enemyHp <= 0 && playerHp > 0){
+    Console.WriteLine("You win!");
+}
+else if(enemyHp > 0 && playerHp <= 0){
+    Console.WriteLine("You lose");
+}
